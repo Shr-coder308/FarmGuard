@@ -3,11 +3,11 @@ import { createRoot } from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./index.css";
 
-// Main Pages
+
 import App from "./App.jsx";
 import Dashboard from "./pages/Dashboard.jsx";
 
-// Feature Pages
+
 import CropRecognizer from "./pages/CropRecognizer.jsx";
 import WaterLevel from "./pages/WaterLevel.jsx";
 import DiseaseDetect from "./pages/DiseaseDetect.jsx";

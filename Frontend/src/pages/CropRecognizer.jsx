@@ -95,7 +95,7 @@ export default function CropRecognizer() {
 
   return (
     <div className="relative bg-gradient-to-b from-emerald-300 via-green-200 to-lime-300 min-h-screen flex flex-col">
-      {/* Top Navbar */}
+      
       <div className="sticky top-0 z-30 bg-white/50 backdrop-blur-lg border-b border-emerald-200 shadow-sm">
         <div className="max-w-7xl mx-auto flex items-center justify-between p-4">
           <div className="flex items-center gap-2">
@@ -114,7 +114,7 @@ export default function CropRecognizer() {
         </div>
       </div>
 
-      {/* Main Content */}
+      
       <div className="flex-grow py-10 px-6 md:px-10 max-w-7xl mx-auto w-full">
         <div className="text-center mb-10 space-y-2">
           <h2 className="text-5xl font-extrabold bg-gradient-to-r from-emerald-600 via-green-600 to-lime-600 bg-clip-text text-transparent drop-shadow-md">
@@ -130,7 +130,7 @@ export default function CropRecognizer() {
           </div>
         </div>
 
-        {/* Grid Layout */}
+        
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Upload Section */}
           <div className="bg-white/70 backdrop-blur-lg border border-emerald-200 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
@@ -142,7 +142,7 @@ export default function CropRecognizer() {
               PNG.
             </p>
 
-            {/* Dropzone */}
+            
             <label className="flex flex-col items-center justify-center h-48 border-2 border-dashed border-emerald-400 rounded-xl cursor-pointer hover:bg-emerald-50/60 transition-all">
               <input
                 type="file"
@@ -159,7 +159,7 @@ export default function CropRecognizer() {
               </span>
             </label>
 
-            {/* Preview */}
+           
             {preview && (
               <div className="mt-5">
                 <img
@@ -170,7 +170,7 @@ export default function CropRecognizer() {
               </div>
             )}
 
-            {/* Buttons */}
+            
             <div className="mt-6 flex gap-3">
               <button
                 onClick={detect}
@@ -198,11 +198,11 @@ export default function CropRecognizer() {
               </button>
             </div>
 
-            {/* Error */}
+            
             {err && <div className="mt-4 text-red-600 text-sm">{err}</div>}
           </div>
 
-          {/* Result Section */}
+         
           <div className="bg-white/70 backdrop-blur-lg border border-emerald-200 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
             <h3 className="text-xl font-bold text-emerald-700 mb-2">
               AI Recognition Result
@@ -239,12 +239,12 @@ export default function CropRecognizer() {
         </div>
       </div>
 
-      {/* Footer */}
+      
       <footer className="text-center py-6 text-emerald-900/80 text-sm">
         © {new Date().getFullYear()} FarmGuard — AI-Powered Smart Farming 🌾
       </footer>
 
-      {/* 💬 Chatbot Floating Button */}
+      
       {!showChat && (
         <button
           onClick={() => setShowChat(true)}
@@ -254,7 +254,7 @@ export default function CropRecognizer() {
         </button>
       )}
 
-      {/* 🧠 Chat Popup */}
+     
       {showChat && (
         <div className="fixed bottom-6 right-6 bg-emerald-950/90 backdrop-blur-xl border border-emerald-400/30 rounded-2xl shadow-2xl w-80 max-h-[70vh] flex flex-col overflow-hidden z-[9999]">
           <div className="flex justify-between items-center bg-emerald-500/20 px-4 py-2 border-b border-emerald-400/30">

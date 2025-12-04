@@ -54,12 +54,12 @@ const Dashboard = () => {
       className="relative min-h-screen bg-cover bg-center bg-fixed"
       style={{ backgroundImage: `url(${bg})` }}
     >
-      {/* 🌿 Background Overlay */}
+     
       <div className="absolute inset-0 bg-gradient-to-b from-emerald-900/60 via-emerald-800/70 to-emerald-950/80 backdrop-blur-sm pointer-events-none" />
 
-      {/* 🌿 Main Content */}
+     
       <div className="relative z-10 min-h-screen text-white">
-        {/* Navbar */}
+       
         <nav className="flex justify-between items-center px-8 py-4 bg-white/10 backdrop-blur-md border-b border-white/10 shadow-md">
           <div className="flex items-center gap-2">
             <Cpu className="text-lime-300 w-6 h-6" />
@@ -76,7 +76,7 @@ const Dashboard = () => {
           </button>
         </nav>
 
-        {/* Hero Section */}
+       
         <header className="text-center mt-16 mb-10 px-4">
           <h1 className="text-5xl md:text-6xl font-extrabold mb-3">
             Welcome,{" "}
@@ -93,7 +93,7 @@ const Dashboard = () => {
           </div>
         </header>
 
-        {/* Dashboard Cards */}
+        
         <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 px-8 py-10">
           {features.map((card, i) => (
             <div
@@ -117,13 +117,13 @@ const Dashboard = () => {
                 </Link>
               </div>
 
-              {/* Glow effect */}
+             
               <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-40 bg-white/10 blur-xl transition pointer-events-none" />
             </div>
           ))}
         </section>
 
-        {/* Footer */}
+       
         <footer className="mt-10 text-center py-6 bg-white/5 backdrop-blur-md border-t border-white/10">
           <div className="flex justify-center items-center gap-2 text-lime-300 mb-2">
             <Activity className="w-5 h-5" />
@@ -135,7 +135,7 @@ const Dashboard = () => {
         </footer>
       </div>
 
-      {/* 💬 Chatbot Floating Button (Always on top) */}
+     
       {!showChat && (
         <button
           onClick={() => setShowChat(true)}
@@ -146,7 +146,7 @@ const Dashboard = () => {
         </button>
       )}
 
-      {/* 🧠 Chat Popup */}
+     
       {showChat && (
         <div className="fixed bottom-6 right-6 bg-emerald-950/90 backdrop-blur-xl border border-emerald-400/30 rounded-2xl shadow-2xl w-80 max-h-[70vh] flex flex-col overflow-hidden z-[9999]">
           <div className="flex justify-between items-center bg-emerald-500/20 px-4 py-2 border-b border-emerald-400/30">

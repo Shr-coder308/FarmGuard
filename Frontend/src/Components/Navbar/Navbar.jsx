@@ -36,7 +36,7 @@ const Navbar = () => {
     return () => document.removeEventListener("mousedown", handler);
   }, []);
 
-  // backend logic 
+   
   const handleSubmit = async (e) => {
     e.preventDefault();
     setFormErr("");
@@ -78,7 +78,7 @@ const Navbar = () => {
 
   return (
     <>
-      {/* Background image with blur */}
+      
       <div
         className="fixed inset-0 -z-10 bg-no-repeat bg-center bg-[length:100%_100%]"
         style={{
@@ -88,13 +88,13 @@ const Navbar = () => {
       />
       <div className="fixed inset-0 -z-10 bg-gradient-to-b from-black/40 via-transparent to-black/80" />
 
-      {/* Sunlight glow */}
+      
       <div className="fixed top-0 left-0 w-full h-full pointer-events-none overflow-hidden">
         <div className="absolute top-10 left-1/4 w-72 h-72 bg-yellow-200/30 blur-[100px] animate-pulse rounded-full" />
         <div className="absolute top-0 right-1/3 w-56 h-56 bg-orange-300/20 blur-[120px] animate-pulse-slow rounded-full" />
       </div>
 
-      {/*Navbar */}
+      
       <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-white/10 border-b border-lime-200/20 shadow-md">
         <nav className="max-w-7xl mx-auto flex justify-between items-center px-8 py-3">
           <h1 className="text-3xl font-extrabold tracking-tight text-lime-100 drop-shadow-md flex items-center gap-2">
@@ -151,7 +151,7 @@ const Navbar = () => {
         </nav>
       </header>
 
-      {/* Hero Section */}
+      
       <section className="h-screen flex flex-col justify-center items-center text-center text-white px-6 relative">
         <h2 className="text-6xl font-extrabold leading-tight text-lime-100 drop-shadow-[0_4px_10px_rgba(0,0,0,0.7)] animate-glow">
           Empowering Farmers with AI 🌾
@@ -196,7 +196,7 @@ const Navbar = () => {
         </div>
       </section>
 
-      {/* Auth Modal */}
+      
       {showModal && (
         <div
           className="fixed inset-0 z-[100] grid place-items-center bg-black/70 backdrop-blur-sm"

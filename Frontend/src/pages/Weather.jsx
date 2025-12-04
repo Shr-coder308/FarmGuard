@@ -26,7 +26,7 @@ export default function Weather() {
   const navigate = useNavigate();
   const API_KEY = "f0b031f077010784afb946cad85a16fe";
 
-  // --- Weather Fetch Logic ---
+  
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(async (pos) => {
       const { latitude, longitude } = pos.coords;
@@ -60,7 +60,7 @@ export default function Weather() {
     });
   }, []);
 
-  // --- Chatbot Send Logic ---
+  
   const handleSend = async () => {
     if (!input.trim()) return;
     const userMsg = input;
@@ -105,7 +105,7 @@ export default function Weather() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-sky-300 via-emerald-200 to-lime-200 relative overflow-hidden">
-      {/* Navbar */}
+      
       <nav className="sticky top-0 z-30 bg-white/40 backdrop-blur-md border-b border-emerald-200 shadow-sm flex justify-between items-center px-6 py-3">
         <div className="flex items-center gap-2">
           <CloudSun className="text-emerald-600 w-6 h-6" />
@@ -122,14 +122,14 @@ export default function Weather() {
         </button>
       </nav>
 
-      {/* Main Content */}
+      
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
         className="max-w-5xl mx-auto py-10 px-4"
       >
-        {/* Current Weather Card */}
+        
         <div className="bg-white/70 backdrop-blur-xl border border-emerald-300 rounded-3xl p-8 shadow-2xl text-center">
           <h2 className="text-3xl font-bold text-emerald-800 flex justify-center items-center gap-2 mb-2">
             <CloudSun /> {weather.name}
@@ -152,7 +152,7 @@ export default function Weather() {
           </div>
         </div>
 
-        {/* 7-Day Forecast */}
+       
         <div className="mt-10">
           <h3 className="text-2xl font-bold text-center text-emerald-800 mb-6 flex items-center justify-center gap-2">
             <CalendarDays /> 7-Day Forecast
@@ -188,7 +188,7 @@ export default function Weather() {
           </div>
         </div>
 
-        {/* Summary */}
+        
         <div className="mt-12 text-center bg-white/70 backdrop-blur-lg rounded-2xl border border-emerald-200 p-8 shadow-lg">
           <h4 className="text-2xl font-bold text-emerald-700 mb-3">
             💡 FarmGuard AI Weather Tips
@@ -202,12 +202,12 @@ export default function Weather() {
         </div>
       </motion.div>
 
-      {/* Footer */}
+      
       <footer className="text-center py-6 text-emerald-900/80 text-sm">
         © {new Date().getFullYear()} FarmGuard — AI-Powered Smart Farming 🌱
       </footer>
 
-      {/* 💬 Chatbot Floating Button */}
+      
       {!showChat && (
         <button
           onClick={() => setShowChat(true)}
@@ -217,7 +217,7 @@ export default function Weather() {
         </button>
       )}
 
-      {/* 🧠 Chat Popup */}
+      
       {showChat && (
         <div className="fixed bottom-6 right-6 bg-emerald-950/90 backdrop-blur-xl border border-emerald-400/30 rounded-2xl shadow-2xl w-80 max-h-[70vh] flex flex-col overflow-hidden z-[9999]">
           <div className="flex justify-between items-center bg-emerald-500/20 px-4 py-2 border-b border-emerald-400/30">

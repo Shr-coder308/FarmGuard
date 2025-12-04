@@ -80,7 +80,7 @@ export default function FertilizerGuide() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-emerald-200 via-lime-100 to-green-200 relative">
-      {/* Top Navbar */}
+     
       <nav className="sticky top-0 z-30 bg-white/50 backdrop-blur-md border-b border-emerald-200 shadow-sm flex justify-between items-center px-6 py-3">
         <div className="flex items-center gap-2">
           <FlaskRound className="text-emerald-600 w-6 h-6" />
@@ -97,7 +97,7 @@ export default function FertilizerGuide() {
         </button>
       </nav>
 
-      {/* Header */}
+      
       <div className="text-center mt-10 space-y-3">
         <h2 className="text-5xl font-extrabold bg-gradient-to-r from-green-600 via-emerald-500 to-lime-600 bg-clip-text text-transparent drop-shadow-md">
           🌱 Smart Fertilizer Recommendations
@@ -111,7 +111,7 @@ export default function FertilizerGuide() {
         </div>
       </div>
 
-      {/* Cards Section */}
+      
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
@@ -152,7 +152,7 @@ export default function FertilizerGuide() {
         ))}
       </motion.div>
 
-      {/* AI Info */}
+     
       <div className="max-w-5xl mx-auto bg-white/70 backdrop-blur-lg rounded-2xl border border-emerald-200 shadow-lg p-8 text-center mb-10">
         <h3 className="text-2xl font-bold text-emerald-700 mb-3">
           💡 FarmGuard AI Fertilizer Insights
@@ -165,12 +165,12 @@ export default function FertilizerGuide() {
         </p>
       </div>
 
-      {/* Footer */}
+      
       <footer className="text-center py-6 text-emerald-900/80 text-sm">
         © {new Date().getFullYear()} FarmGuard — Smart Farming with AI 🌿
       </footer>
 
-      {/* 💬 Chatbot Floating Button */}
+      
       {!showChat && (
         <button
           onClick={() => setShowChat(true)}
@@ -180,7 +180,7 @@ export default function FertilizerGuide() {
         </button>
       )}
 
-      {/* 🧠 Chat Popup */}
+      
       {showChat && (
         <div className="fixed bottom-6 right-6 bg-emerald-950/90 backdrop-blur-xl border border-emerald-400/30 rounded-2xl shadow-2xl w-80 max-h-[70vh] flex flex-col overflow-hidden z-[9999]">
           <div className="flex justify-between items-center bg-emerald-500/20 px-4 py-2 border-b border-emerald-400/30">

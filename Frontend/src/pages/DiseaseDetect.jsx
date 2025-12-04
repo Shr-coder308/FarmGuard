@@ -18,7 +18,7 @@ export default function DiseaseDetect() {
   const [err, setErr] = useState("");
   const [loading, setLoading] = useState(false);
 
-  // Chat state
+ 
   const [showChat, setShowChat] = useState(false);
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
@@ -26,7 +26,7 @@ export default function DiseaseDetect() {
 
   const navigate = useNavigate();
 
-  // Upload handler
+  
   const onFile = (e) => {
     const file = e.target.files?.[0];
     if (!file) return;
@@ -36,7 +36,7 @@ export default function DiseaseDetect() {
     setErr("");
   };
 
-  // Disease detection API
+ 
   const detectDisease = async () => {
     if (!image) {
       setErr("Please upload an image first.");
@@ -70,7 +70,7 @@ export default function DiseaseDetect() {
     }
   };
 
-  // Chat handler
+
   const handleSend = async () => {
     if (!input.trim()) return;
     const userMsg = input;
@@ -104,7 +104,7 @@ export default function DiseaseDetect() {
   return (
     <div className="relative min-h-screen bg-gradient-to-b from-red-200 via-orange-100 to-yellow-100">
 
-      {/* NAVBAR */}
+   
       <div className="sticky top-0 z-20 bg-white/50 backdrop-blur-lg border-b border-red-300 shadow">
         <div className="max-w-6xl mx-auto flex justify-between items-center p-4">
           <div className="flex items-center gap-2">
@@ -123,10 +123,10 @@ export default function DiseaseDetect() {
         </div>
       </div>
 
-      {/* MAIN CONTENT */}
+      
       <div className="max-w-6xl mx-auto px-4 py-10 grid grid-cols-1 lg:grid-cols-2 gap-8">
 
-        {/* UPLOAD SECTION */}
+        
         <div className="bg-white/80 backdrop-blur-lg border border-red-300 rounded-2xl p-6 shadow-lg">
           <h2 className="text-xl font-bold text-red-700">Upload Leaf Image</h2>
           <p className="text-sm text-gray-700 mt-1">
@@ -157,7 +157,7 @@ export default function DiseaseDetect() {
           {err && <p className="mt-4 text-red-600">{err}</p>}
         </div>
 
-        {/* RESULT SECTION */}
+        
         <div className="bg-white/80 backdrop-blur-lg border border-red-300 rounded-2xl p-6 shadow-lg">
           <h2 className="text-xl font-bold text-red-700">AI Result</h2>
 
@@ -185,7 +185,7 @@ export default function DiseaseDetect() {
         </div>
       </div>
 
-      {/* CHATBOT FLOATING BUTTON */}
+      
       {!showChat && (
         <button
           onClick={() => setShowChat(true)}
@@ -195,11 +195,11 @@ export default function DiseaseDetect() {
         </button>
       )}
 
-      {/* CHATBOT POPUP */}
+      
       {showChat && (
         <div className="fixed bottom-6 right-6 w-80 bg-red-900/90 backdrop-blur-xl rounded-2xl shadow-xl border border-red-400 flex flex-col max-h-[70vh] overflow-hidden z-[9999]">
 
-          {/* Chat Header */}
+         
           <div className="flex justify-between items-center p-3 border-b border-red-300">
             <h3 className="font-bold text-red-200">FarmGuard Assistant 🤖</h3>
             <button
@@ -210,7 +210,7 @@ export default function DiseaseDetect() {
             </button>
           </div>
 
-          {/* Messages */}
+        
           <div className="p-3 flex-1 overflow-y-auto space-y-2">
             {messages.map((m, i) => (
               <div
@@ -230,7 +230,7 @@ export default function DiseaseDetect() {
             )}
           </div>
 
-          {/* Chat Input */}
+          
           <div className="flex border-t border-red-300 bg-red-900/60">
             <input
               className="flex-1 bg-transparent text-white p-2 outline-none placeholder-red-300"

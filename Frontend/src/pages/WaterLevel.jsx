@@ -51,7 +51,7 @@ export default function WaterLevels() {
 
   return (
     <div className="p-10 bg-gradient-to-b from-emerald-300 via-blue-200 to-emerald-400 min-h-screen flex flex-col items-center">
-      {/* Heading Section */}
+      
       <div className="text-center mb-10 space-y-2">
         <h2 className="text-5xl font-extrabold bg-gradient-to-r from-blue-500 via-blue-400 to-blue-600 bg-clip-text text-transparent drop-shadow-lg">
           💧 Smart Water Level Dashboard
@@ -65,19 +65,19 @@ export default function WaterLevels() {
         </div>
       </div>
 
-      {/* Grid Cards */}
+      
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 max-w-7xl w-full">
         {data.map((item, index) => (
           <div
             key={index}
             className={`relative group overflow-hidden rounded-2xl p-6 bg-gradient-to-tr ${item.color} shadow-lg hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-500 text-white border border-white/20 backdrop-blur-lg`}
           >
-            {/* Animated wave background */}
+            
             <div className="absolute inset-0 opacity-20">
               <Waves className="w-full h-full text-white/40 animate-pulse" />
             </div>
 
-            {/* Content */}
+            
             <div className="relative z-10">
               <div className="flex justify-between items-center mb-4">
                 <h3 className="text-2xl font-extrabold flex items-center gap-2">
@@ -86,7 +86,7 @@ export default function WaterLevels() {
                 <Droplet className="w-6 h-6 opacity-80" />
               </div>
 
-              {/* Water Level Progress Bar */}
+              
               <div className="mt-2 mb-4 bg-white/20 rounded-full h-4 overflow-hidden backdrop-blur-sm">
                 <div
                   className="h-4 rounded-full bg-white/70 transition-all duration-700"
@@ -103,7 +103,7 @@ export default function WaterLevels() {
                 <Info className="w-4 h-4 mt-[2px] text-white/70" /> {item.advice}
               </p>
 
-              {/* Health Score */}
+              
               <div className="flex items-center justify-between bg-white/20 rounded-xl px-3 py-2 text-sm backdrop-blur-md">
                 <span className="flex items-center gap-2">
                   <Leaf className="w-4 h-4 text-white/80" /> Health Score
@@ -122,13 +122,13 @@ export default function WaterLevels() {
               </div>
             </div>
 
-            {/* Glow on hover */}
+            
             <div className="absolute inset-0 opacity-0 group-hover:opacity-40 bg-white/20 blur-2xl transition" />
           </div>
         ))}
       </div>
 
-      {/* AI Insights Summary */}
+       
       <div className="mt-16 bg-white/70 backdrop-blur-md rounded-2xl shadow-lg p-8 max-w-5xl text-center">
         <h3 className="text-2xl font-bold text-emerald-700 mb-3">
           💡 AI Irrigation Summary

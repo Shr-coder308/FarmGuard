@@ -32,7 +32,7 @@ export default function DroneView() {
   const [input, setInput] = useState("");
   const [chatLoading, setChatLoading] = useState(false);
 
-  // 🌐 Stream logic
+ 
   const envBase = import.meta.env.VITE_STREAM_BASE;
   const envPath = import.meta.env.VITE_STREAM_PATH || "/live/drone/stream/index.m3u8";
   const derivedHost = (() => {
@@ -46,7 +46,7 @@ export default function DroneView() {
   const STREAM_BASE = envBase || derivedHost || "http://10.18.12.11:8888";
   const STREAM_URL = `${STREAM_BASE.replace(/\/$/, "")}${envPath}`;
 
-  // ⚙ FPS counter
+  
   useEffect(() => {
     let last = performance.now();
     let frames = 0;
@@ -65,7 +65,7 @@ export default function DroneView() {
     return () => cancelAnimationFrame(raf);
   }, []);
 
-  // 📺 Stream attach
+  
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
@@ -119,7 +119,7 @@ export default function DroneView() {
     };
   }, [STREAM_URL]);
 
-  // 🧠 Chat send
+  
   const handleSend = async () => {
     if (!input.trim()) return;
     const userMsg = input;
@@ -163,7 +163,7 @@ export default function DroneView() {
         </button>
       </nav>
 
-      {/* Video Feed */}
+      
       <div className="w-full h-full flex items-center justify-center relative">
         <video
           ref={videoRef}
@@ -176,7 +176,7 @@ export default function DroneView() {
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-emerald-950/20 to-black/70" />
       </div>
 
-      {/* Telemetry HUD */}
+      
       <div className="absolute top-0 w-full flex justify-between px-6 py-4 text-sm font-medium">
         <div className="flex gap-4 items-center">
           <Battery className="w-5 h-5 text-lime-400" /> {battery}%
@@ -195,7 +195,7 @@ export default function DroneView() {
         </div>
       </div>
 
-      {/* Bottom Controls */}
+      
       <motion.div
         initial={{ y: 100 }}
         animate={{ y: 0 }}
@@ -213,7 +213,7 @@ export default function DroneView() {
         </button>
       </motion.div>
 
-      {/* 💬 Chatbot Floating Button */}
+      
       {!showChat && (
         <button
           onClick={() => setShowChat(true)}
@@ -223,7 +223,7 @@ export default function DroneView() {
         </button>
       )}
 
-      {/* 🧠 Chat Popup */}
+      
       {showChat && (
         <div className="fixed bottom-6 right-6 bg-emerald-950/90 backdrop-blur-xl border border-emerald-400/30 rounded-2xl shadow-2xl w-80 max-h-[70vh] flex flex-col overflow-hidden z-[9999]">
           <div className="flex justify-between items-center bg-emerald-500/20 px-4 py-2 border-b border-emerald-400/30">
