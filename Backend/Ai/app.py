@@ -5,7 +5,7 @@ import numpy as np
 import time
 import re
 
-# Optional TensorFlow Import (image model)
+
 try:
     import tensorflow as tf
     from tensorflow.keras.preprocessing import image
@@ -13,7 +13,7 @@ try:
 except Exception:
     TF_AVAILABLE = False
 
-# Optional: OpenAI client
+
 try:
     from openai import OpenAI
     client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
@@ -24,16 +24,16 @@ except Exception:
 app = Flask(__name__)
 CORS(app, supports_credentials=True)
 
-# --- Configuration ---
+
 UPLOAD_DIR = "static"
 CROP_MODEL_PATH = os.path.join("model", "crop_model.h5")
 DISEASE_MODEL_PATH = os.path.join("model", "disease_model.h5")
 os.makedirs(UPLOAD_DIR, exist_ok=True)
 
-# Crop classes
+
 CROP_CLASSES = ["Wheat", "Rice", "Maize", "Sugarcane", "Cotton", "Potato", "Tomato"]
 
-# ---------- Load Crop Model ----------
+
 crop_model = None
 if TF_AVAILABLE and os.path.exists(CROP_MODEL_PATH):
     try:
@@ -44,7 +44,7 @@ if TF_AVAILABLE and os.path.exists(CROP_MODEL_PATH):
 else:
     print("⚠ No crop model found — Running in DEMO mode.")
 
-# ---------- Load Disease Model (Optional) ----------
+
 disease_model = None
 if TF_AVAILABLE and os.path.exists(DISEASE_MODEL_PATH):
     try:
@@ -61,9 +61,6 @@ def home():
     return "🌿 FarmGuard AI Backend running successfully!"
 
 
-# ----------------------------------------------------
-# 🌾 CROP DETECTION API
-# ----------------------------------------------------
 @app.route("/detect-crop", methods=["POST"])
 def detect_crop():
     if "file" not in request.files:
@@ -102,9 +99,6 @@ def detect_crop():
             pass
 
 
-# ----------------------------------------------------
-# 🦠 DISEASE DETECTION API
-# ----------------------------------------------------
 @app.route("/detect-disease", methods=["POST"])
 def detect_disease():
     if "file" not in request.files:
@@ -114,7 +108,7 @@ def detect_disease():
     save_path = os.path.join(UPLOAD_DIR, f.filename)
     f.save(save_path)
 
-    # DEMO CLASSES
+    
     DISEASE_CLASSES = [
         "Healthy",
         "Leaf Blight",
@@ -144,7 +138,7 @@ def detect_disease():
             conf = float(np.max(preds))
             mode = "Real AI"
         else:
-            # DEMO fallback
+            
             rng = np.random.default_rng()
             disease = rng.choice(DISEASE_CLASSES).item()
             conf = float(rng.uniform(0.82, 0.98))
@@ -165,9 +159,6 @@ def detect_disease():
             pass
 
 
-# ----------------------------------------------------
-# 🤖 CHATBOT API (multilingual + fallback)
-# ----------------------------------------------------
 @app.route("/chat", methods=["POST"])
 def chatbot():
     try:
@@ -176,10 +167,10 @@ def chatbot():
         if not user_msg:
             return jsonify({"reply": "Please type a question!"})
 
-        # detect Hindi text
+        
         is_hindi = bool(re.search(r'[\u0900-\u097F]', user_msg))
 
-        # Try OpenAI
+        
         reply = None
         if AI_AVAILABLE:
             try:
@@ -198,7 +189,7 @@ def chatbot():
             except:
                 pass
 
-        # Fallback (offline)
+    
         if not reply:
             msg = user_msg.lower()
 
@@ -220,8 +211,7 @@ def chatbot():
         return jsonify({"error": str(e)})
 
 
-# ----------------------------------------------------
-# Run App
-# ----------------------------------------------------
+
+
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5001, debug=True)
